@@ -6,7 +6,7 @@
 /node_modules/
 # Ignore bundler config.
 /.bundle
-
+/database.yml/ 
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
