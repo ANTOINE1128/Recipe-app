@@ -6,13 +6,11 @@
 /node_modules/
 # Ignore bundler config.
 /.bundle
-/database.yml/ 
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
