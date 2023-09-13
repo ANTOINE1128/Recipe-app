@@ -1,0 +1,13 @@
+<!-- app/views/recipe_foods/edit.html.erb -->
+<h1>Edit Recipe Food</h1>
+
+<%= form_for [@recipe, @recipe_food] do |f| %>
+  <div class="field">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <%= f.submit 'Update Recipe Food' %>
+<% end %>
+
+<%= link_to 'Back to Recipe Details', @recipe %>
