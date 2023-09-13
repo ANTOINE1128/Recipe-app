@@ -1,0 +1,20 @@
+<h1>Add Food Items</h1>
+<p><%= current_user.name %> is creating Food</p>
+<%= form_for @food do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :measurement_unit %>
+    <%= f.text_field :measurement_unit %>
+  </div>
+  <div class="field">
+    <%= f.label :unit_price %>
+    <%= f.text_field :price %>
+  </div>
+  <%= f.hidden_field :quantity, value: 0 %>
+  <div class="actions">
+    <%= f.submit "Create Food" %>
+  </div>
+<% end %>
