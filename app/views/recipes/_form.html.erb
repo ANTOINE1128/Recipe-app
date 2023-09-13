@@ -1,0 +1,32 @@
+<!-- app/views/recipes/_form.html.erb -->
+
+<%= form_with(model: recipe, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :preparation_time %>
+    <%= form.number_field :preparation_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cooking_time %>
+    <%= form.number_field :cooking_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :public %>
+    <%= form.check_box :public %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
