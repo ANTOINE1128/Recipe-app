@@ -68,3 +68,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+# Use cancancan authorization
+gem 'cancancan'

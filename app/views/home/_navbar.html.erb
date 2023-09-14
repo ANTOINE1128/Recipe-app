@@ -1,10 +1,10 @@
 <nav style ="background-color:#d3d3d3; height:60px">
   <% if user_signed_in? %>
   <span>Signed in as <%= current_user.name %></span>
-  <span><%= link_to 'Public Recipe' %></span>
+  <span><%= link_to 'Public Recipe', root_path %></span>
   <span><%= link_to 'Food', foods_path %></span>
 <span><%= link_to  'Recipe', recipes_path %></span>
-  <span><%= link_to 'Edit profile' %></span>
+  <span><%= link_to 'Edit profile', edit_user_registration_path %></span>
   <span class="sign"><%= button_to 'Sign out', destroy_user_session_path, method: :delete %></span>
   <% else %>
 <span class="sign"><%= link_to 'Sign in', new_user_session_path %></span>

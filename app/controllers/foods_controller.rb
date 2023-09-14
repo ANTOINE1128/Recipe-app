@@ -1,4 +1,8 @@
 class FoodsController < ApplicationController
+  load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |_exception|
+    redirect_to root_path, notice: 'Failed to delete this food item because it is being used by other users.'
+  end
   def index
     if current_user
       @foods = current_user.foods.includes(:recipe_foods).order(created_at: :desc)
@@ -23,6 +27,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
+    @food.recipe_foods.destroy_all
     if @food.destroy
       redirect_to foods_path, notice: 'Food deleted successfully'
     else

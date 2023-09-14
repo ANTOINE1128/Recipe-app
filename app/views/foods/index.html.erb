@@ -16,7 +16,11 @@
 <td> <%= food.measurement_unit %></td>
 <td> <%= food.price %></td>
 <td> 
+<% if can? :destroy, food %>
 <%= button_to "Delete", food, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% else %>
+Used by other uesrs
+<% end %>
 </td>
 </tr>
 <% end %>
