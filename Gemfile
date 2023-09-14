@@ -68,9 +68,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'spring-commands-rspec'
 end
 # Use cancancan authorization
 gem 'cancancan'
