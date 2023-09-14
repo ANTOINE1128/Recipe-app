@@ -21,7 +21,6 @@ class RecipeFoodsController < ApplicationController
 
     if @recipe_food.save
       flash[:notice] = 'Ingredient created!'
-      # Update the associated food's quantity.
       @recipe_food.food.update_quantity
     else
       flash[:alert] = @recipe_food.errors.full_messages.join(', ')

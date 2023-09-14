@@ -49,11 +49,6 @@ class RecipesController < ApplicationController
     end
   end
 
-  def destroy
-    @recipe.destroy
-    redirect_to recipes_url, notice: 'Recipe was successfully deleted.'
-  end
-
   private
 
   def set_recipe

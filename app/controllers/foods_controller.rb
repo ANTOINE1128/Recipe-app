@@ -15,9 +15,11 @@ class FoodsController < ApplicationController
   def create
     @food = current_user.foods.new(food_params)
     if @food.save
-      redirect_to foods_path, notice: 'Food added successfully'
+      flash[:notice] = 'Food added successfully'
+      redirect_to foods_path
     else
-      render 'new', notice: 'Error adding Food'
+      flash[:alert] = 'Error adding Food'
+      render 'new'
     end
   end
 
