@@ -1,6 +1,10 @@
 # app/controllers/recipes_controller.rb
 
 class RecipesController < ApplicationController
+  load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |_exception|
+    redirect_to root_path, notice: 'Access denied'
+  end
   before_action :set_recipe, only: %i[show edit update destroy]
 
   def index
@@ -26,7 +30,14 @@ class RecipesController < ApplicationController
     end
   end
 
-  def show; end
+  def public_recipes
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
+  end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    @recipe_food = @recipe.recipe_foods
+  end
 
   def edit; end
 
