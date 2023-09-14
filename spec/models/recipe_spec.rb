@@ -33,7 +33,7 @@ RSpec.describe Recipe, type: :model do
 
   it 'can have associated recipe foods' do
     recipe = Recipe.new(name: 'Delicious Dish', preparation_time: 30, cooking_time: 60, user:)
-    recipe.recipe_foods.build(quantity: 2, food_id: 1) # You can replace 1 with a valid food_id
+    recipe.recipe_foods.build(quantity: 2, food_id: 1)
     expect(recipe.recipe_foods).to_not be_empty
   end
 end
