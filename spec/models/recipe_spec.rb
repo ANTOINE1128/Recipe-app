@@ -5,7 +5,6 @@ require 'rails_helper'
 RSpec.describe Recipe, type: :model do
   let(:user) { User.create(name: 'Test User', email: 'test@example.com', password: 'password') }
 
-
   it 'is valid with a name, preparation_time, cooking_time, and a user' do
     recipe = Recipe.new(name: 'Delicious Dish', preparation_time: 30, cooking_time: 60, user:)
     expect(recipe).to be_valid
