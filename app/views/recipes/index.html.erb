@@ -1,17 +1,24 @@
+<div class="users-container">
+<div class="food-recipe-container">
+<% @recipes.each do |recipe| %>
 
-  <% @recipes.each do |recipe| %>
+  <div class="row">
+  <div class="col-md-4">
 
- 
-        <section>
+       
           <%= link_to recipe_path(recipe) do %>
             <p><%= recipe.name %></p>
           <% end %>
-          <%= button_to  "Delete", recipe_path(recipe), method: :delete, class: 'link' %>
-        </section>
-        <section>
-          <p><%= recipe.description %></p>
-        </section>
-    </div>
+          <%= button_to  "Remove", recipe_path(recipe), method: :delete,class:"btn btn-danger btn-sm"%>
+       
+        </div>
+        <div class="col-md-6">
+       
+          <p style="overflow-wrap: break-word;width:100%;"><%= recipe.description %></p>
+      
+        </div>
+        </div>
   <% end %>
-  <%= link_to 'Add Recipe', new_recipe_path%>
-</div>
+  <%= link_to 'Add Recipe', new_recipe_path, class: "btn btn-primary"%>
+  </div>
+  </div>
