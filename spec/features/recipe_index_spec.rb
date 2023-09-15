@@ -5,8 +5,8 @@ RSpec.feature 'Foods', type: :feature do
 
   before(:each) do
     visit new_user_session_path
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
+    fill_in 'email@example.com', with: user.email
+    fill_in 'password', with: user.password
     click_button 'Log in'
     sleep 1
   end
@@ -29,7 +29,7 @@ RSpec.feature 'Foods', type: :feature do
     expect(page).to have_content('Description 2')
 
     # Verify that the "Delete" buttons are present for each recipe
-    expect(page).to have_selector(:link_or_button, 'Delete', count: 2)
+    expect(page).to have_selector(:link_or_button, 'Remove', count: 2)
 
     # You can add more assertions and interactions as needed
   end

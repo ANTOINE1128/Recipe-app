@@ -39,6 +39,12 @@ class RecipesController < ApplicationController
     @recipe_food = @recipe.recipe_foods
   end
 
+  def destroy
+    @recipe.recipe_foods.destroy_all
+    @recipe.destroy
+    redirect_to recipes_url, notice: 'Recipe was successfully deleted.'
+  end
+
   def edit; end
 
   def update
