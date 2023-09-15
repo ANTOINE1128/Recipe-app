@@ -1,13 +1,13 @@
-<nav style ="background-color:#d3d3d3; height:60px">
+<nav>
   <% if user_signed_in? %>
-  <span>Signed in as <%= current_user.name %></span>
+  <span style="left: 11%;position:absolute; color:#4477ce">Signed in as <%= current_user.name %></span>
   <span><%= link_to 'Public Recipe', root_path %></span>
   <span><%= link_to 'Food', foods_path %></span>
-<span><%= link_to  'Recipe', recipes_path %></span>
+  <span><%= link_to  'Recipe', recipes_path %></span>
   <span><%= link_to 'Edit profile', edit_user_registration_path %></span>
-  <span class="sign"><%= button_to 'Sign out', destroy_user_session_path, method: :delete %></span>
+  <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class:"btn btn-secondary  btn-sm" %>
   <% else %>
-<span class="sign"><%= link_to 'Sign in', new_user_session_path %></span>
-<span class="sign"><%= link_to 'Sign up', new_user_registration_path %></span>
+<span class="sign"><%= link_to 'Sign in', new_user_session_path , class:"btn btn-secondary"%></span>
+<span class="sign"><%= link_to 'Sign up', new_user_registration_path , class:"btn btn-secondary"%></span>
  <% end %>
  </nav>

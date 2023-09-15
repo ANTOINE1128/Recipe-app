@@ -1,20 +1,27 @@
-<h1>Add Food Items</h1>
+<div class="users-container">
+<div class="food-recipe-container">
+<div class="mb-3">
+<h3>Add Food Items</h3>
 <p><%= current_user.name %> is creating Food</p>
 <%= form_for @food do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="mb-3">
+    <%= f.label :name, class:"form-label" %>
+    <%= f.text_field :name,  class:"form-control ip-size"  %>
   </div>
-  <div class="field">
-    <%= f.label :measurement_unit %>
-    <%= f.text_field :measurement_unit %>
+  <div class="mb-3">
+    <%= f.label :measurement_unit, class:"form-label" %>
+    <%= f.text_field :measurement_unit,  class:"form-control ip-size"  %>
   </div>
-  <div class="field">
-    <%= f.label :price %>
-    <%= f.text_field :price %>
+
+  <div class="mb-3">
+    <%= f.label :unit_price, class:"form-label" %>
+    <%= f.text_field :price ,class:"form-control ip-size"%>
   </div>
   <%= f.hidden_field :quantity, value: 0 %>
   <div class="actions">
-    <%= f.submit "Create Food" %>
+    <%= f.submit "Create Food", class:"btn btn-primary" %>
   </div>
 <% end %>
+</div>
+</div>
+</div>
