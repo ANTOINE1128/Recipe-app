@@ -1,7 +1,9 @@
-<h1>Add ingredients</h1>
-<h1><%=@recipe.name%></h1>
+<div class="users-container">
+<div class="food-recipe-container">
+<h2>Add ingredients</h2>
+<h4><%=@recipe.name%></h4>
 <p class="page-title">Add new ingredients</p>
-<div class="foods-container">
+
   <table>
     <tr>
       <th>Food</th>
@@ -19,10 +21,11 @@
           <%= f.hidden_field :recipe_id, value: @recipe.id %>
           <%= f.hidden_field :food_id, value: food.id %>
           <%= f.number_field :quantity, value: 0 %>
-          <%= f.submit "Add" %>
+          <%= f.submit "Add", class:"btn btn-success btn-sm" %>
         <% end %>        
         </td>
       </tr>
     <% end %>
   </table>
+</div>
 </div>

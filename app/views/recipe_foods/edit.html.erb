@@ -1,5 +1,7 @@
-<p class="page-title">Edit Ingredient</p>
-<div class="foods-container">
+<div class="users-container">
+<div class="food-recipe-container">
+<h5> Edit Ingredient</h5>
+
   <table>
     <tr>
       <th>Food</th>
@@ -14,9 +16,10 @@
       <td>
         <%= form_with model: @recipe_food, url: recipe_recipe_food_path(@recipe,@recipe_food)  do |f| %>
           <%= f.number_field :quantity, value: @recipe_food.quantity %>
-          <%= f.submit "Modify" %>
+          <%= f.submit "Modify", class:"btn btn-warning btn-sm" %>
         <% end %>
       </td>
     </tr>
   </table>
+</div>
 </div>

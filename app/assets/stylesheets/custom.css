@@ -57,11 +57,12 @@ nav {
 .sign-container input[type='email'],
 .sign-container input[type='password'],
 .sign-container input[type='text'] {
-  height: 25px;
+  height: 33px;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 6px;
   outline: none;
   margin-bottom: 10px;
+  border: 1.5px solid #d3d3d3;
 }
 
 .btn-sign {
@@ -167,4 +168,8 @@ table td + td {
 
 .form-check {
   margin-left: 70%;
+}
+
+.btnrec {
+  margin-top: 2%;
 }
