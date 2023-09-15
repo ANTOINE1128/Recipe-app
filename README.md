@@ -77,7 +77,7 @@ to run the tests run the following command
 
 ## 👥 Authors <a name="authors"></a>
 
-👤: **Antoine Makdessy**
+👤: **Binod Bhusal-Iron Lad**
 
 - GitHub: [@binodbhusal](https://github.com/binodbhusal)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/binodbhusal/)
@@ -87,6 +87,7 @@ to run the tests run the following command
 - GitHub: [@ANTOINE1128](https://github.com/ANTOINE1128)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/antoine-makdessy/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- FUTURE FEATURES -->
 
