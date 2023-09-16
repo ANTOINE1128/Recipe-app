@@ -1,0 +1,47 @@
+<div class="users-container">
+<div class="food-recipe-container">
+<section style="text-align:center;">
+<h2>Recipe Details </h2>
+<h4 class="recipe-name"><%=@recipe.name%></h4>
+</section>
+<section>
+    <%= form_for @recipe do |f| %>
+      <div class="form-check form-switch">
+        <%= f.check_box :public, class: 'form-check-input', id: 'flexSwitchCheckDefault', role: 'switch' %>
+        <%= f.label :public, class: 'form-check-label', for: 'flexSwitchCheckDefault' %>
+    <% end %>
+      </section>
+    <section>
+      <p>Prepration Time: <%=@recipe.preparation_time %> Hour</p>
+      <p>Cooking Time: <%=@recipe.cooking_time %> Hour</p>
+      <p>Steps go here...</p>
+      </section>
+      <section style="display:flex; gap:45%;">
+      <%= link_to "Generate Shopping List", general_shopping_list_path, class: "btn btn-primary" %>
+      <%= link_to "Add Ingredient" , new_recipe_recipe_food_path(@recipe), class: "btn btn-primary" %>
+    </section>
+    <hr style= "width:90%">
+  <table>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+    <% @recipe_food.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.food.name %></td>
+        <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
+        <td>$ <%= (ingredient.food.price * ingredient.quantity) %></td>
+        <td>
+      <div style="display:flex; gap:25%">
+        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe, ingredient), class:"btn btn-warning btn-sm" %>
+        <%= button_to  "Remove", recipe_recipe_food_path(@recipe,ingredient), method: :delete, class: "btn btn-danger btn-sm" %>
+        </div>
+    </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+</div>
+</div>
