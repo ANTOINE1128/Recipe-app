@@ -1,0 +1,18 @@
+databases:
+  - name: recipedatabase
+    databaseName: dbrecipe_tqgh
+    user: userdb
+
+services:
+  - type: web
+    name: recipe-apps
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dbrecipe_tqgh
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
